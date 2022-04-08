@@ -37,7 +37,6 @@ function main {
         # The daemon crashed
         REASON=$2
         NOTIFY="$PREAMBLE: SYSTEM FAILURE ($REASON)"
-        perform_call FAULT
         ;;
     "AREA")
         NUMBER=$2
@@ -167,11 +166,9 @@ function main {
 
     [ -n "$NOTIFY" ] &&
         for nr in "${NRS[@]}"
+        do
             "$SMSCOMMAND" "$SENDER" "$nr" "$NOTIFY"
         done
-
-    [ -n "$CALL" ] &&
-        perform_call "$CALL"
 
     return 0
 }
