@@ -59,7 +59,7 @@ Once the serial port connection is working, you can proceed.
 # Software Setup Guide
 
 The software consists of these parts:
-* The core daemon, written in C# and can technically also by run under Windows, but this is not recommended
+* The core daemon, written in C# and can technically also run under Windows, but this is not recommended
 * The web interface, written in PHP, HTML, CSS, and JavaScript (jQuery); uses `EventSource` to receive live updates from the backend
 * A tiny C program, `nudge.c`, to make arming via the web interface work
 * An example event shell script written in Bash
