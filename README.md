@@ -35,7 +35,6 @@ Jan  8 12:37:25 pi texecomd[2388]: System voltage: 13.63V / Battery voltage: 13.
 Jan  8 12:37:25 pi texecomd[2388]: Event script: /opt/texmond/event.sh "POWER" "13.63" "13.63" "288" "36" "12.32"
 Jan  8 12:52:31 pi texecomd[2388]: System voltage: 13.63V / Battery voltage: 13.56V / System current: 288.00mA / Battery charging current: 36.00mA / Reference voltage: 12.32V
 Jan  8 12:52:31 pi texecomd[2388]: Event script: /opt/texmond/event.sh "POWER" "13.63" "13.56" "288" "36" "12.32"
-
 ```
 
 # Prerequisites
@@ -77,8 +76,7 @@ You should get one warning about xbuild not being able to understand some propri
 
 Now you're ready to copy the compiled files:
 
-```
-bash
+```bash
 mkdir -p /opt/texmond/
 cp texmond/bin/Release/texmond.* /opt/texmond/
 cp texmond/bin/Release/settings.ini /etc/texmond.ini
@@ -86,8 +84,7 @@ cp texmond/bin/Release/settings.ini /etc/texmond.ini
 
 If you want, you can install the init script:
 
-```
-bash
+```bash
 cp initscript.sh /etc/init.d/texmond
 chmod +x /etc/init.d/texmond
 update-rc.d texmond defaults
@@ -98,8 +95,7 @@ update-rc.d texmond enable
 
 You'll need to have GCC installed: `apt-get install gcc`
 
-```
-bash
+```bash
 gcc nudge.c -o nudge
 cp nudge /opt/texmond/
 chmod u+s /opt/texmond/nudge #sorry
@@ -124,8 +120,7 @@ You'll also need a web server with PHP set up and running. How you do it is up t
 
 You essentially just have to copy the `smarthome` folder to your web server' public-facing directory, for example:
 
-```
-bash
+```bash
 cp -r smarthome /var/www/html/htdocs/
 ```
 
@@ -135,8 +130,7 @@ Remember to add `?auth=changeme` to the URL when trying to access it for testing
 
 The example event script includes the glue logic to make the web interface display state information. You'll need to copy it to the right place and make it executable:
 
-```
-bash
+```bash
 cp examplescript.sh /opt/texmond/eventscript.sh
 chmod +x /opt/texmond/eventscript.sh
 ```
@@ -145,8 +139,7 @@ Then open `/opt/texmond/eventscript.sh` and search for `TODO` to find the lines 
 
 Now set up the state folders and state files:
 
-```
-bash
+```bash
 # You may need to adjust 40 to reflect the actual number of zones your panel supports.
 for ((i=-1; i<=40; i++)); do
     mkdir -p "/opt/alarm/zones/$i"
@@ -159,7 +152,7 @@ done
 
 Test that the event source works:
 
-```
+```bash
 curl http://localhost/smarthome/eventsource.php?auth=changeme
 ```
 
@@ -174,8 +167,7 @@ Open `/etc/texmond.ini` in your favourite editor and follow the instructions in 
 
 If you've been following the instructions above, here's a suitable example where you just need to change the `Port` setting.
 
-```
-ini
+```ini
 [texmond]
 ; Set to the COM port used by your Texecom Premier Elite panel
 Port=/dev/ttyS0
