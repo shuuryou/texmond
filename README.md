@@ -50,7 +50,7 @@ Jan  8 12:52:31 pi texecomd[2388]: Event script: /opt/texmond/event.sh "POWER" "
 
 ## Serial Port Connection
 
-1. If you have a *Premier Elite USB-COM* cable, this is easy. Just plug it in as described in the included manual (INS246-2)
+1. If you have a *Premier Elite USB-COM* cable, this is easy: just plug it in as described in the included manual (INS246-2)
 1. If you **don't** have that cable, you will need to [buy an FTDI USB-Serial adapter](https://www.amazon.co.uk/DSD-TECH-SH-U09C2-Debugging-Programming/dp/B07TXVRQ7V) and then [follow this guide](https://archive.ph/jjMXk)
 
 Once the serial port connection is working, you can proceed.
