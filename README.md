@@ -10,7 +10,7 @@ This code has a long history, filled with a bit of happiness and a lot of frustr
 
 ## About the Name
 
-Originally, this project was called **texecomd**, but I assume Texecom, Ltd. wouldn't be very happy if I used their company name as the project's public name, I wanted to use **montexd**, but they already have a product called *MonTex*, so I chose the next best thing.
+Originally, this project was called **texecomd**, but I assume Texecom, Ltd. wouldn't be very happy if I used their company name as the project's public name. I wanted to use **montexd**, but they already have a product called *MonTex*, so I chose the next best thing.
 
 ## Should I Use This?
 This project is not affiliated, endorsed, recommended, or supported by Texecom, Ltd. in any way. Do not contact them if it screws up your panel or if things break otherwise. You are responsible for what you do. If you don't like tinkering and experimenting with your home alarm system, leave the job to a professional installer and ask them to set up [Texecom Cloud](https://www.texe.com/texecom-account/texecom-cloud/) for you. That's a great and affordable solution for casual users who want peace of mind.
