@@ -40,7 +40,7 @@ Jan  8 12:52:31 pi texecomd[2388]: Event script: /opt/texmond/event.sh "POWER" "
 
 # Prerequisites
 
-1. A Texecom Premier Elite panel, such as a Premier Elite 64, Premier Elite 64-W, etc.
+1. A Texecom Premier Elite panel, such as a Premier Elite 48, Premier Elite 64-W, etc.
 1. A serial port connection to your panel, e.g. using the official *Premier Elite USB-COM* cable if you can source one
 1. A working Linux system — a Raspberry Pi works great for this!
 1. A few hours of time to get things set up and working properly
@@ -281,6 +281,6 @@ The following commands are supported:
 
 # Help Wanted
 
-Do you own a Premier Elite panel other than a Premier Elite 64? Please try this software and report any bugs, because I had to make some assumptions on how these panels work and they may not be correct. I'm especially interested in feedback from property owners who have a Premier Elite 168 or a Premier Elite 640 that is set up so it uses the maximum number of supported areas and zones.
+Do you own a Premier Elite panel other than a Premier Elite 48 or Premier Elite 64-W? Please try this software and report any bugs, because I had to make some assumptions on how these panels work and they may not be correct. I'm especially interested in feedback from property owners who have a Premier Elite 168 or a Premier Elite 640 that is set up so it uses the maximum number of supported areas and zones.
 
-Of course, I'm also interested in feedback and bug reports from Premier Elite 64 and  Premier Elite 64-W users. :smiley:
+Of course, I'm also interested in feedback and bug reports from Premier Elite 48 and  Premier Elite 64-W users. :smiley:
