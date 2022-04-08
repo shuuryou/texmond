@@ -16,6 +16,7 @@ Originally, this project was called **texecomd**, but I assume Texecom, Ltd. wou
 This project is not affiliated, endorsed, recommended, or supported by Texecom, Ltd. in any way. Do not contact them if it screws up your panel or if things break otherwise. You are responsible for what you do. If you don't like tinkering and experimenting with your home alarm system, leave the job to a professional installer and ask them to set up [Texecom Cloud](https://www.texe.com/texecom-account/texecom-cloud/) for you. That's a great and affordable solution for casual users who want peace of mind.
 
 But if you're a hacker and your crime is one of being overly curious, you've come to the right place. Have a seat and make yourself comfortable. 
+But if you're a hacker and your crime is one of being overly curious, you've come to the right place. Have a seat and make yourself comfortable. 
 
 # Screenshot
 
@@ -116,9 +117,9 @@ Building a release build with Visual Studio is prohibited by a guard clause in `
 
 ### Installing
 
-You'll also need a web server with PHP set up and running. How you do it is up to you, as there are [hundreds of tutorials on how to set up e.g. nginx + PHP](https://duckduckgo.com/?q=nginx+php+debian).
+First you'll need a web server with PHP set up and running. How you do it is up to you, as there are [hundreds of tutorials on how to set up e.g. nginx + PHP](https://duckduckgo.com/?q=nginx+php+debian).
 
-You essentially just have to copy the `smarthome` folder to your web server' public-facing directory, for example:
+Then you essentially just have to copy the `smarthome` folder to your web server's public-facing directory, for example:
 
 ```bash
 cp -r smarthome /var/www/html/htdocs/
@@ -128,7 +129,7 @@ Remember to add `?auth=changeme` to the URL when trying to access it for testing
 
 ### Setting up the Event Script
 
-The example event script includes the glue logic to make the web interface display state information. You'll need to copy it to the right place and make it executable:
+The example event script includes the necessary glue logic to make the web interface display state information. You'll need to copy it to the right place and make it executable:
 
 ```bash
 cp examplescript.sh /opt/texmond/eventscript.sh
@@ -156,7 +157,7 @@ Test that the event source works:
 curl http://localhost/smarthome/eventsource.php?auth=changeme
 ```
 
-You should get a JSON array as a response, followed by a colon every 3 seconds. Press CTRL+C to terminate curl.
+You should get a JSON array as a response, followed by a colon every few seconds. Press CTRL+C to terminate curl.
 
 
 # Configuration
@@ -165,7 +166,7 @@ You should get a JSON array as a response, followed by a colon every 3 seconds. 
 
 Open `/etc/texmond.ini` in your favourite editor and follow the instructions in the comments. It's that easy.
 
-If you've been following the instructions above, here's a suitable example where you just need to change the `Port` setting.
+If you've been following the instructions above, here's a suitable example where you just need to change the `Port` and `UDLCode` settings.
 
 ```ini
 [texmond]
@@ -215,17 +216,17 @@ Set `AUTHLINE` to a long and secure password. To access the web interface, you n
 
 Now you need to take care of the three arrays that follow and this is where Wintex will help you.
 
-1. `$ZONES` needs to map the zone numbers of your panel to sensible labels for display purposes. Zone `-1` must not be removed, it refers to the panel itself.
-1. `$PART1OMIT`, `$PART2OMIT`, and `$PART3OMIT` need to contain the zone numbers that are omitted during the respective part arms. Go through all zones in Wintex and check if the respective checkboxes are set. If they are, add the zone number to the array.
-1. `$ARMMODES` defines the labels shown on the web interface for the various arm modes. `4` is always disarm, `0` is always full arm. `1`, `2`, and `3` specify the three different part arm suites and you could set the labels to the text shown in Wintex.
+1. `$ZONES` needs to map the zone numbers of your panel to sensible labels for display purposes. Zone `-1` must not be removed, because it refers to the panel itself, but you may change its text as you please.
+1. `$PART1OMIT`, `$PART2OMIT`, and `$PART3OMIT` need to contain the zone numbers that are omitted during the respective part arms. Go through all zones in Wintex and check if the respective checkboxes are set. If they are, add that zone number to the array(s).
+1. `$ARMMODES` defines the labels shown on the web interface for the various arm modes. `4` is always disarm, `0` is always full arm, so don't remove those. `1`, `2`, and `3` specify the three different part arm suites and you should set the labels to the text shown in Wintex.
 
-Below the arrays are all the texts shown on the web interface if you want to translate it to your local language.
+Below the arrays are all of the strings that are shown on the web interface. If you want to translate the web interface to your local language, you can edit them.
 
 # Interacting with the Daemon
 
 ## Event Scripts
 
-If you set `EventScript` to am executable or a shell script, the daemon will attempt to execute it whenever an event is logged by the panel.
+If you set `EventScript` to an executable or a shell script, the daemon will attempt to execute it whenever an event is logged by the panel.
 
 The event script receives several command line arguments, the first of which is the type of event that was logged. This is followed by a number of event-specific arguments as documented below:
 
@@ -280,6 +281,6 @@ The following commands are supported:
 
 # Help Wanted
 
-Do you own a Premier Elite panel other than a Premier Elite 64? Please try this software and report any bugs, because I had to make several assumptions on how these panels work and they may not be correct. I'm especially interested in feedback from property owners who have a Premier Elite 168 or a Premier Elite 640 that is set up so it uses the maximum number of supported areas and zones.
+Do you own a Premier Elite panel other than a Premier Elite 64? Please try this software and report any bugs, because I had to make some assumptions on how these panels work and they may not be correct. I'm especially interested in feedback from property owners who have a Premier Elite 168 or a Premier Elite 640 that is set up so it uses the maximum number of supported areas and zones.
 
 Of course, I'm also interested in feedback and bug reports from Premier Elite 64 and  Premier Elite 64-W users. :smiley:
