@@ -15,7 +15,7 @@ Originally, this project was called **texecomd**, but I assume Texecom, Ltd. wou
 ## Should I Use This?
 This project is not affiliated, endorsed, recommended, or supported by Texecom, Ltd. in any way. Do not contact them if it screws up your panel or if things break otherwise. You are responsible for what you do. If you don't like tinkering and experimenting with your home alarm system, leave the job to a professional installer and ask them to set up [Texecom Cloud](https://www.texe.com/texecom-account/texecom-cloud/) for you. That's a great and affordable solution for casual users who want peace of mind.
 
-But if you're a hacker and your crime is one of being overly curious, you've come to the right place. Have a seat and make yourself comfortable. 
+But if you enjoy tinkering with things, you've come to the right place. Have a seat and make yourself comfortable. 
 
 # Screenshot
 
