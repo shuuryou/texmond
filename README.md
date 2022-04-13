@@ -108,7 +108,7 @@ The `nudge` program needs to be SUID root so it can write into the protected /op
 1. You need to [download Mono for Windows](https://www.mono-project.com/docs/getting-started/install/windows/) to get the referenced Mono.Posix library (so the Syslog enums resolve; Mono.Posix isn't used otherwise)
 1. Afterwards open the solution file with Visual Studio, set the configuration to "Debug" and build as usual
 
-Note that the debug build will look for the INI file in the directory the EXE file lives in. The release build looks for the INI file in `/etc/texmon.ini`.
+Note that the debug build will look for the INI file in the directory the EXE file lives in. The release build looks for the INI file in `/etc/texmond.ini`.
 
 Building a release build with Visual Studio is prohibited by a guard clause in `Program.cs`
 
@@ -238,7 +238,7 @@ The event script receives several command line arguments, the first of which is 
 |Keypad logon event|`USER`|User number|User's name as programmed into panel or `<ENGINEER>` if user number is 0|Either `USER CODE` if logged in using PIN, or `TAG` if logged on using proximity tag|
 |Programmable output changed event|`OUTPUT`|Output number|State the output changed to (0 or 1)|
 |Area state change event|`AREA`|Area number|Area text as programmed into panel|Area state as a string (see `PanelAreaStates` enum)|
-|Zone state change event|`ZONE`|Zone number|Zone text are programmed into panel|Zone state as a string (see `PanelZoneType` enum)|`TRUE` if the zone is in alarm state, otherwise `FALSE`|`TRUE` if the zone is auto-bypassed, otherwise `FALSE`|`TRUE` if the zone is in a failed test state, otherwise `FALSE`|`TRUE` if the zone was manually bypassed, otherwise `FALSE`|`TRUE` if the zone is in fault, otherwise `FALSE`|`TRUE` if the zone is marked, otherwise `FALSE`
+|Zone state change event|`ZONE`|Zone number|Zone text as programmed into panel|Zone state as a string (see `PanelZoneType` enum)|`TRUE` if the zone is in alarm state, otherwise `FALSE`|`TRUE` if the zone is auto-bypassed, otherwise `FALSE`|`TRUE` if the zone is in a failed test state, otherwise `FALSE`|`TRUE` if the zone was manually bypassed, otherwise `FALSE`|`TRUE` if the zone is in fault, otherwise `FALSE`|`TRUE` if the zone is marked, otherwise `FALSE`
 |Debug event|`DEBUG`|Raw debug message as a string (you will never see these events unless you work at Texecom, Ltd.)|
 
 ## Arm Files
